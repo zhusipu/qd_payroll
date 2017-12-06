@@ -32,6 +32,51 @@ export const asyncRouterMap = [
         noCache: false
       }
     }]
+  },
+  {
+    path: '/sort',
+    component: Layout,
+    redirect: '/sort/index',
+    children: [{
+      path: 'index',
+      component: _import('sort/index'),
+      name: 'sort',
+      meta: {
+        title: '字段排序',
+        icon: 'sort',
+        noCache: false
+      }
+    }]
+  },
+  {
+    path: '/dataquery',
+    component: Layout,
+    redirect: '/dataquery/index',
+    children: [{
+      path: 'index',
+      component: _import('dataquery/index'),
+      name: 'order',
+      meta: {
+        title: '数据查询',
+        icon: 'database',
+        noCache: false
+      }
+    }]
+  },
+  {
+    path: '/resetpassword',
+    component: Layout,
+    redirect: '/resetpassword/index',
+    children: [{
+      path: 'index',
+      component: _import('resetpassword/index'),
+      name: 'order',
+      meta: {
+        title: '密码重置',
+        icon: 'key',
+        noCache: false
+      }
+    }]
   }
 ]
 

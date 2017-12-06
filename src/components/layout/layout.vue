@@ -1,5 +1,5 @@
 <template>
-  <el-container>
+  <el-container class="container">
     <el-aside width="200px">
       <sidebar></sidebar>
     </el-aside>
@@ -19,3 +19,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .container{
+    height: 100%;
+  }
+</style>
+

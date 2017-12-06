@@ -8,6 +8,12 @@ import App from './App'
 import router from './router'
 import store from './store'
 import './permission'
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
+import VueDND from 'awe-dnd'
+
+Vue.component('icon', Icon)
+Vue.use(VueDND)
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)

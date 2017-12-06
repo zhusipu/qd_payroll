@@ -1,6 +1,6 @@
 <template>
   <div ref="menu" class="menu">
-    <el-menu mode="vertical" unique-opened :default-active="$route.path" :collapse="isCollapse" background-color="#304156" text-color="#fff" active-text-color="#409EFF">
+    <el-menu class="el-menu" mode="vertical" unique-opened :default-active="$route.path" :collapse="isCollapse" background-color="#304156" text-color="#fff" active-text-color="#409EFF">
       <sidebar-item :routes="permission_routers"></sidebar-item>
     </el-menu>
   </div>
@@ -37,3 +37,12 @@ export default {
   }
 }
 </script>
+<style scoped>
+.menu{
+  height: 100%;
+}
+.el-menu{
+  height: 100%;
+}
+</style>
+

@@ -12,19 +12,20 @@ router.beforeEach((to, from, next) => {
       next({path: '/'})
       NProgress.done()
     } else {
-      store.dispatch('GetUserInfo').then(res => {
-        store.dispatch('GenerateRoutes').then(() => { // 生成可访问的路由表
-          router.addRoutes(store.getters.addRouters) // 动态添加可访问路由表
-          console.log(1)
+      if (store.getters.name === undefined || store.getters.name.length === 0) {
+        store.dispatch('GetUserInfo').then(res => {
           next()
           NProgress.done()
+        }).catch(() => {
+          store.dispatch('FedLogOut').then(() => {
+            Message.error('验证失败,请重新登录')
+            next({ path: '/signin' })
+          })
         })
-      }).catch(() => {
-        store.dispatch('FedLogOut').then(() => {
-          Message.error('验证失败,请重新登录')
-          next({ path: '/signin' })
-        })
-      })
+      } else {
+        next()
+        NProgress.done()
+      }
     }
   } else {
     if (whiteList.indexOf(to.path) !== -1) { // 在免登录白名单，直接进入

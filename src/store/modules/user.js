@@ -67,7 +67,7 @@ const user = {
       return new Promise((resolve, reject) => {
         getUserInfo(state.token).then(response => {
           const data = response.data
-          commit('SET_NAME', data.EMP_NAME)
+          commit('SET_NAME', data.data.EMP_NAME)
           resolve(response)
         }).catch(error => {
           reject(error)
