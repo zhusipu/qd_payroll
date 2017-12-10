@@ -16,14 +16,20 @@ export function logout () {
 }
 
 export function loginByUsername (username, password, remember) {
-  const data = {
-    username,
-    password,
-    remember
-  }
   return fetch({
     url: '/signin/index',
     method: 'post',
-    data
+    params: {
+      username,
+      password,
+      remember}
+  })
+}
+
+export function resetPassword (empNo, password) {
+  return fetch({
+    url: '/user/resetPassword',
+    method: 'post',
+    params: {empNo, password}
   })
 }
