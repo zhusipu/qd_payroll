@@ -4,20 +4,20 @@
       <div class="login">
         <el-form ref="loginForm" autoComplete="on" :model="loginData" :rules="loginRules">
           <div class="logo"></div>
-          <div style="margin-top: 15px;">
+          <div style="margin-top: 10px;">
             <el-form-item prop="username">
               <el-input :autofocus="true" placeholder="请输入用户名" v-model="loginData.username"></el-input>
             </el-form-item>
           </div>
-          <div style="margin-top: 15px;">
+          <div style="margin-top: 10px;">
             <el-form-item prop="password">
               <el-input placeholder="请输入密码" prop="password" type="password" v-model="loginData.password"></el-input>
             </el-form-item>
           </div>
-          <div style="margin-top: 15px;">
+          <div style="margin-top: 10px;">
             <el-checkbox prop="remember" v-model="loginData.remember">记住我</el-checkbox>
           </div>
-          <div style="margin-top: 15px;">
+          <div style="margin-top: 10px;">
             <el-button type="primary" class="login-btn" :loading="loging"  @click.native.prevent="_login">登陆</el-button>
           </div>
         </el-form>
@@ -87,20 +87,20 @@ export default {
     top: 50%;
     margin-top:-137px;
     border:1px solid #ccc;
-    padding:30px 30px 30px 30px;
+    padding:20px 20px 20px 20px;
     border-radius: 4px;
     z-index:2;
 }
 .car{
     position: absolute;
     background: #ffffff;
-    width:500px;
-    height:421px;
+    width:195px;
+    height:271px;
     background: url("../../assets/images/car.png");
     left:50%;
-    margin-left:-532px;
+    margin-left:-332px;
     top: 50%;
-    margin-top:-187px;
+    margin-top:-127px;
     z-index:1;
 }
 .login-btn{
@@ -121,6 +121,6 @@ export default {
     background: url("../../assets/images/logo.png");
     height: 37px;
     width: 271px;
-    margin-left:35px;
+    margin-left:13px;
 }
 </style>

@@ -23,7 +23,7 @@
           class="upload-demo"
           drag
           name="file"
-          :data="{date:date}"
+          :data="{date:date, isSendNotice: isSendNotice}"
           :action="uploadUrl"
           :auto-upload="false"
           :limit="1"
@@ -36,6 +36,9 @@
           <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
           <div class="el-upload__tip" slot="tip">只能上传xls、xlsx文件</div>
         </el-upload>
+      </el-form-item>
+      <el-form-item>
+        <el-checkbox v-model="isSendNotice">导入成功后发送企业微信通知！</el-checkbox>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">立即上传</el-button>
@@ -54,6 +57,7 @@ export default {
   data () {
     return {
       date: null,
+      isSendNotice: true,
       uploadUrl: ''
     }
   },

@@ -33,3 +33,18 @@ export function resetPassword (empNo, password) {
     params: {empNo, password}
   })
 }
+
+export function superResetPassword (returnUrl) {
+  return fetch({
+    url: '/user/superResetPassword',
+    method: 'get',
+    params: {returnUrl}
+  })
+}
+
+export function signout () {
+  return fetch({
+    url: '/user/signout',
+    method: 'get'
+  })
+}

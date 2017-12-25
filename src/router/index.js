@@ -55,7 +55,7 @@ export const asyncRouterMap = [
     children: [{
       path: 'index',
       component: _import('dataquery/index'),
-      name: 'order',
+      name: 'dataquery',
       meta: {
         title: '数据查询',
         icon: 'database',
@@ -70,10 +70,40 @@ export const asyncRouterMap = [
     children: [{
       path: 'index',
       component: _import('resetpassword/index'),
-      name: 'order',
+      name: 'resetpassword',
       meta: {
-        title: '密码重置',
+        title: '查看薪资密码重置',
         icon: 'key',
+        noCache: false
+      }
+    }]
+  },
+  {
+    path: '/superresetpassword',
+    component: Layout,
+    redirect: '/superresetpassword/index',
+    children: [{
+      path: 'index',
+      component: _import('superresetpassword/index'),
+      name: 'superresetpassword',
+      meta: {
+        title: '管理员密码重置',
+        icon: 'key',
+        noCache: false
+      }
+    }]
+  },
+  {
+    path: '/signout',
+    component: Layout,
+    redirect: '/signout/index',
+    children: [{
+      path: 'index',
+      component: _import('signout/index'),
+      name: 'signout',
+      meta: {
+        title: '退出',
+        icon: 'sign-out',
         noCache: false
       }
     }]
